@@ -1,10 +1,10 @@
 # PythonPlayground
-Various Python and Opencv Example Codes
+_Various Python and Opencv Example Codes_
 
 #dependencies
-PIL
-numpy
-opencv-python
-pyscreenshot
-qrcode
-pyautogui
+_PIL  
+numpy  
+opencv-python  
+pyscreenshot  
+qrcode  
+pyautogui_  
