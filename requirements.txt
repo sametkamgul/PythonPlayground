@@ -1,0 +1,6 @@
+pillow
+numpy
+opencv-python
+pyscreenshot
+qrcode
+pyautogui
