@@ -1,5 +1,9 @@
-# PythonPlayground
-_Various Python and Opencv Example Codes_
+# PythonPlayground - Various Python and Opencv Example Codes
+_Screen recording  
+Generating  
+QR code  
+Rotating image   
+Requesting a website and getting JSON output_
 
 # dependencies
 _PIL  
