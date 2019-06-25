@@ -10,14 +10,14 @@ qr = qrcode.QRCode(
 )
 
 # The data that you want to store
-data = "https://sametkamgul.wordpress.com/"
+data = 'https://sametkamgul.wordpress.com/'
 
 # Add data
 qr.add_data(data)
-qr.make(fit=True)
+qr.make(fit = True)
 
 # Create an image from the QR Code instance
 img = qr.make_image()
 
 # Save it somewhere, change the extension as needed:
-img.save("image.jpg")
+img.save('image.jpg')
