@@ -9,7 +9,7 @@ def rotateImage(image, angle):
 
 if __name__ == '__main__':
 	print('[INFO] app is started')
-	angle = 30 # in degree, counter-clockwise rotation
+	angle = 45 # in degree, counter-clockwise rotation
 	img = cv.imread('testImages/robot.jpg')
 	output = rotateImage(img, angle)
 	cv.imwrite('outputImages/rotated-image.png', output)
