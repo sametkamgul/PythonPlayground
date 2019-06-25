@@ -3,7 +3,7 @@ _Screen recording
 Generating  
 QR code  
 Rotating image   
-Requesting a website and getting JSON output_
+Requesting data from url and getting JSON output_
 
 # dependencies
 _PIL  
