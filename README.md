@@ -11,7 +11,11 @@ numpy
 opencv-python  
 pyscreenshot  
 qrcode  
-pyautogui_  
+pyautogui  
+pytube --> [https://github.com/ytdl-org/youtube-dl]_  
 
 # requirements.txt
 install requirements.txt by 'pip install -r /path/to/requirements.txt'
+
+
+[pytube]: https://github.com/ytdl-org/youtube-dl
