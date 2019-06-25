@@ -31,44 +31,42 @@ def imageOverlayF(foreGroundImage,background):
 	outImage = cv2.add(foreground, background)
 
 	# outImage = cv2.blur(outImage,(2,2))
-	cv2.imwrite("outImgPy.png", outImage)
-
-
+	cv2.imwrite("output-image.png", outImage)
 
 if __name__ == "__main__":
 	print("App is started!")
 	cap = cv2.VideoCapture(0)
-	cap.set(3,1920)
-	cap.set(4,1080)
+	cap.set(3, 1920)
+	cap.set(4, 1080)
 	_, frame = cap.read()
 	print(str(frame.shape))
 	print("Photo is captured!")
 	img = frame
 	
-	lowerBound=np.array([33,80,40])
-	upperBound=np.array([102,255,255])
+	lowerBound=np.array([33, 80, 40])
+	upperBound=np.array([102, 255, 255])
 
-	kernelOpen=np.ones((1,1))
-	kernelClose=np.ones((10,10))
+	kernelOpen=np.ones((1, 1))
+	kernelClose=np.ones((10, 10))
 
 
-	bgImage = cv2.imread("testImages/bg.png")
-	# img = cv2.imread("testImages/pic2.jpg")
-	img = cv2.resize(img,(1920,1080))
-	height,width,_ = img.shape
-	blankImage = np.zeros((height,width,4), np.uint8)
+	bgImage = cv2.imread("testImages/background.png")
+	img = cv2.resize(img, (1920, 1080))
+	height, width, _ = img.shape
+	blankImage = np.zeros((height, width, 4), np.uint8)
 
 
 	#convert BGR to HSV
-	imgHSV = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+	imgHSV = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 	# create the Mask
-	mask = cv2.inRange(imgHSV,lowerBound,upperBound)
+	mask = cv2.inRange(imgHSV, lowerBound,upperBound)
 	#morphology
-	maskOpen=cv2.morphologyEx(mask,cv2.MORPH_OPEN,kernelOpen)
-	maskClose=cv2.morphologyEx(maskOpen,cv2.MORPH_CLOSE,kernelClose)
+	maskOpen = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernelOpen)
+	maskClose = cv2.morphologyEx(maskOpen, cv2.MORPH_CLOSE, kernelClose)
 
 	maskFinal=maskClose
-	conts,h,w=cv2.findContours(maskFinal.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)
+	print(cv2.findContours(maskFinal.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE))
+	conts, h, w = cv2.findContours(maskFinal.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 	print("Processing image...")
 	for x in range(width):
 		for y in range(height):
@@ -82,12 +80,8 @@ if __name__ == "__main__":
 				blankImage[y][x][1] = 0
 				blankImage[y][x][2] = 0
 				blankImage[y][x][3] = 0
-				
-
-
-	
 	# blankImage = cv2.blur(blankImage,(2,2))
-	blankImage = cv2.GaussianBlur(blankImage,(3,3),3)
-	imageOverlayF(blankImage,bgImage)
+	blankImage = cv2.GaussianBlur(blankImage,(3, 3), 3)
+	imageOverlayF(blankImage, bgImage)
 	# cv2.waitKey(0)
 	print("Process is done!")
