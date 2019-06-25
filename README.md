@@ -1,7 +1,7 @@
 # PythonPlayground
 Various Python and Opencv Example Codes
 
-dependencies
+#dependencies
 PIL
 numpy
 opencv-python
