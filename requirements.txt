@@ -5,3 +5,4 @@ pyscreenshot
 qrcode
 pyautogui
 tqdm
+pyusb

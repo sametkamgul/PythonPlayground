@@ -5,6 +5,7 @@ QR code
 Rotating image   
 Requesting data from url and getting JSON output  
 Probability-mass_
+Usb VID, PID device example(simple)
 
 # dependencies
 _PIL  
@@ -14,6 +15,7 @@ pyscreenshot
 qrcode  
 pyautogui  
 tqdm  
+pyusb  
 pytube --> [https://github.com/ytdl-org/youtube-dl]_  
 
 # requirements.txt
