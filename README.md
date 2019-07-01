@@ -4,8 +4,8 @@ Generating
 QR code  
 Rotating image   
 Requesting data from url and getting JSON output  
-Probability-mass_
-Usb VID, PID device example(simple)
+Probability-mass  
+Usb VID, PID device example(simple)_
 
 # dependencies
 _PIL  
